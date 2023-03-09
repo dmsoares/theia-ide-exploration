@@ -29,13 +29,9 @@ export class MitApplicationShell extends ApplicationShell {
         });
         panelForSideAreas.id = "theia-left-right-split-panel";
 
-        return this.createBoxLayout(
-            [this.topPanel, panelForSideAreas, this.statusBar],
-            [0, 1, 0],
-            {
-                direction: "top-to-bottom",
-                spacing: 0,
-            }
-        );
+        return this.createBoxLayout([panelForSideAreas], [1], {
+            direction: "top-to-bottom",
+            spacing: 0,
+        });
     }
 }
