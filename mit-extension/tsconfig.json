@@ -14,17 +14,13 @@
         "resolveJsonModule": true,
         "module": "commonjs",
         "moduleResolution": "node",
+        "esModuleInterop": true,
         "target": "ES2017",
         "jsx": "react",
-        "lib": [
-            "ES2017",
-            "dom"
-        ],
+        "lib": ["ES2017", "dom"],
         "sourceMap": true,
         "rootDir": "src",
         "outDir": "lib"
     },
-    "include": [
-        "src"
-    ]
+    "include": ["src"]
 }

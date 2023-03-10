@@ -8,6 +8,7 @@ import {
 } from "@theia/core/lib/browser";
 import { Command, CommandRegistry } from "@theia/core/lib/common/command";
 import { TerminalCommands } from "@theia/terminal/lib/browser/terminal-frontend-contribution";
+import Config from "./config.json";
 
 export const RightPanelCommand: Command = { id: "right-panel:command" };
 
@@ -38,9 +39,7 @@ export class RightPanelContribution
 
     async initializeLayout(): Promise<void> {
         await this.editorManager.open(
-            URI.fromFilePath(
-                "home/academiadecodigo/Learning/mit-todo-app/package.json"
-            )
+            URI.fromFilePath(Config.FILE_URI as string)
         );
         await this.openView();
 
