@@ -26,14 +26,13 @@ export class RightPanelWidget extends ReactWidget {
     protected async init(): Promise<void> {
         this.id = RightPanelWidget.ID;
         this.title.closable = false;
-        this.title.label = "Info";
         this.update();
     }
 
     render(): React.ReactElement {
         return (
             <div id="widget-container">
-                <h2>Right Panel</h2>
+                <h3>Exercise</h3>
                 {this.exerciseDescriptionWidget.render()}
             </div>
         );

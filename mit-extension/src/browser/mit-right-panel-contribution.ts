@@ -32,7 +32,7 @@ export class RightPanelContribution
         super({
             widgetId: RightPanelWidget.ID,
             widgetName: RightPanelWidget.LABEL,
-            defaultWidgetOptions: { area: "main", mode: "open-to-right" },
+            defaultWidgetOptions: { area: "left" },
             toggleCommandId: RightPanelCommand.id,
         });
     }
@@ -41,9 +41,8 @@ export class RightPanelContribution
         await this.editorManager.open(
             URI.fromFilePath(Config.FILE_URI as string)
         );
-        await this.openView();
-
         this.commands.executeCommand(TerminalCommands.NEW.id);
+        await this.openView();
     }
 
     /**
