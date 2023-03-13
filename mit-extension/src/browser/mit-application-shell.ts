@@ -24,16 +24,10 @@ export class MitApplicationShell extends ApplicationShell {
         });
         panelForRightArea.id = "theia-right-split-panel";
 
-        const leftRightSplitLayout = this.createSplitLayout(
+        return this.createBoxLayout(
             [this.mainPanel, panelForRightArea],
             [3, 2],
-            { orientation: "horizontal", spacing: 0 }
+            { direction: "left-to-right" }
         );
-        const panelForSideAreas = new SplitPanel({
-            layout: leftRightSplitLayout,
-        });
-        panelForSideAreas.id = "theia-left-right-split-panel";
-
-        return this.createBoxLayout([panelForSideAreas], [1], {});
     }
 }
