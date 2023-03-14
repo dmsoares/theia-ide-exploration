@@ -10,7 +10,8 @@ import { LeftSideBarWidget } from "./mit-left-side-bar-widget";
 @injectable()
 export class MitApplicationShell extends ApplicationShell {
     /**
-     * Assemble the application shell layout. Override this method in order to change the arrangement
+     * Assemble the application shell layout.
+     * Override this method in order to change the arrangement
      * of the main area and the side panels.
      */
 
