@@ -1,8 +1,10 @@
 # MIT CodeIDE
 
+![UI example](/ide-client-server-ui-example.png)
+
 ## Application Architecture
 
-This solution implements a client/server architecture. It uses the [Theia](https://theia-ide.org) platform for building IDEs. A Theia IDE consists of two separate processes (a backend and a frontend) communicating through JSON-RPC messages over WebSockets or REST APIs over HTTP. This makes it a good fit for having the frontend running in the browser while both the backend and the development environment are being run and hosted in a remote server.
+This solution implements a client/server architecture. It uses the [Theia](https://theia-ide.org) platform for building IDEs. A Theia IDE consists of two separate processes (a `backend` and a `frontend`) communicating through JSON-RPC messages over WebSockets or REST APIs over HTTP. This makes it a good fit for having the frontend running in the browser while both the backend and the development environment are being run and hosted in a remote server.
 
 Note that, by default, the `backend` process is also responsible for serving the `frontend` to the client. Once started on the client (e.g., a browser), the frontend requests a websocket connection to the backend, through which all communication is done.
 
@@ -12,15 +14,13 @@ Importantly, while a `backend` instance allows multiple client connections, all 
 
 [Theia](https://theia-ide.org) is a self-advertised _Open, Flexible and Extensible Cloud & Desktop IDE Platform_. It is open-source (Eclipse Public License v. 2.0) and actively under development.
 
-Its design is extension-based. What this means is that an IDE is the composite of different extensions (installed at compile time), which all have _full access to internals of Theia via dependency injection_.
+Its design is extension-based. What this means is that an IDE is the composite of different extensions (NPM packages), installed at compile time, which all have _full access to internals of Theia via dependency injection_.
 
-It also supports VSCode extensions (installable at runtime), as it shares the same (limited) API.
+It also supports VSCode extensions (installable at runtime), as it exposes the same (limited) API.
 
-![Alt text](https://theia-ide.org/extensiontypes.png)
+![Theia IDE architecture](/theia-ide-architecture.png)
 
 Dependency injection (provided by [InversifyJS](https://inversify.io/)) is an integral part of developing extensions. This allows interface-oriented programming and rebinding interfaces to our own implementations, replacing implementations from other extensions (including from the `core` extension).
-
-## Application Deployment
 
 ## Infrastructure
 
@@ -37,6 +37,12 @@ Since users will have access to a shell running on our servers, another challeng
 
 ## Features
 
+More research should be put into finding out how much effort it would take to develop, manage and maintain all the custom features that may be implemented by us in the future.
+
+UI-wise, widgets (visual components that can be attached to the application UI shell) can be developed as React components.
+
+The seemingly idiomatic way of styling DOM elements is via `.css` files packaged with each extension. Integration with CSS frameworks was not attempted in this research.
+
 ### Code Editor
 
 Runs [Monaco](https://microsoft.github.io/monaco-editor/), provided by a `Theia` extension.
@@ -52,8 +58,6 @@ Runs every process the host machine allows.
 ### Persist/Restore User State
 
 User data persistence is handled server-side.
-
-![UI Example](/ui-example.png)
 
 # Installation
 
