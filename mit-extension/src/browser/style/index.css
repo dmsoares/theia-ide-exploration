@@ -1,0 +1,63 @@
+.mit-top-bar {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.mit-top-bar-banner {
+    display: flex;
+    justify-content: center;
+    background-color: var(--theia-activityBar-background);
+    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    height: 70%;
+}
+
+.mit-top-bar-tab {
+    margin: 0 20px;
+    color: grey;
+    height: 100%;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mit-top-bar-tab.selected {
+    color: white;
+    border-bottom: white 1px solid;
+}
+
+.mit-bottom-bar {
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+}
+
+.mit-bottom-bar-banner {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--theia-activityBar-background);
+    box-shadow: 0px 1px 15px rgb(0 0 0 / 25%);
+    width: 90%;
+    align-content: center;
+    align-items: center;
+}
+
+.mit-button-container {
+    display: flex;
+    margin: 0 20px;
+}
+.mit-button {
+    background: var(--theia-charts-foreground);
+    box-shadow: 0px 2px 12px rgb(51 51 51 / 15%);
+    border-radius: 4px;
+    padding: 8px 20px;
+    margin: 5px;
+    color: var(--theia-activityBar-background);
+}
+
+.mit-button:hover {
+    cursor: pointer;
+}
