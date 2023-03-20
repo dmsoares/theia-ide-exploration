@@ -1,4 +1,4 @@
-import React = require("react");
+import * as React from "react";
 import { ReactWidget } from "@theia/core/lib/browser";
 import { injectable, postConstruct } from "@theia/core/shared/inversify";
 
